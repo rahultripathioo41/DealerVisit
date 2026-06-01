@@ -71,6 +71,7 @@
 <button onclick="downloadExcel()">Download Excel</button>
 
 <script>
+<script>
 
 // 🔐 Password
 const correctPassword = "monu";
@@ -78,721 +79,785 @@ let enteredPassword = "";
 
 while (enteredPassword !== correctPassword) {
     enteredPassword = prompt("Enter password:");
+
     if (enteredPassword !== correctPassword) {
         alert("Wrong password");
     }
 }
 
 // 🔥 Dealer Data
-const dealers = [
-  
+const data =[
   {
-    "DEALER NAME": "Om Corporation",
-    "CONTACT PERSON": "Bhanu Prakash Agrawal/Girish Agrawal",
-    "ADDRESS": "697/1,Civil Line,Infront of Rani Laxmi Bai Park Near Tehsheel",
-    "TOWN": "Jhansi",
-    "DISTRICT": "Jhansi",
-    "STATE": "U.P.",
-    "PIN": "284002",
-    "MOB NO": "9452694710/9450038840",
-    "Email Id": "",
-    "Gstin": "09ACRPA6963F1ZA",
-    "Pan": "ACRPA6963F",
-    "Aadhar": "677240812879",
-    "": ""
+    "Dealer Firm/ Site Name /Influencer Name": "neeraj traders",
+    "Contact Person": "neeraj",
+    "Status of Contact Person": "EXISTING DEALER",
+    "Location": "raksha",
+    "District": "jhansi",
+    "Contact no.": "7619994694",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "Kamdhenu NXT, Raipur ISI TMT ",
+    "Remarks ": "Talking about increase the sale and coverage new sub dealer."
   },
   {
-    "DEALER NAME": "Garg Steels",
-    "CONTACT PERSON": "Lakhan Lal Agrawal/Mitesh Agrawal",
-    "ADDRESS": "197,Antiya Tal Road,Civil Lines,Near Co-Operative Bnak",
-    "TOWN": "Jhansi",
-    "DISTRICT": "Jhansi",
-    "STATE": "U.P.",
-    "PIN": "284002",
-    "MOB NO": "9616037738",
-    "Email Id": "mit123ag@gmail.com",
-    "Gstin": "09AGNPA1188Q1ZS",
-    "Pan": "AGNPA1188Q",
-    "Aadhar": "817583886509",
-    "": ""
+    "Dealer Firm/ Site Name /Influencer Name": "mayank metal",
+    "Contact Person": "mayank",
+    "Status of Contact Person": "non dealer",
+    "Location": "jhansi",
+    "District": "jhansi",
+    "Contact no.": "9208039783",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "Kamdhenu NXT, Raipur ISI TMT",
+    "Remarks ": "Talking about increase the sale and coverage new sub dealer."
   },
   {
-    "DEALER NAME": "Hari Ram Ram Prakash",
-    "CONTACT PERSON": "Ram Prakash Agrawal",
-    "ADDRESS": "1472,Antiya Tal Road,Civil Line,Near BKD Chauraha",
-    "TOWN": "Jhansi",
-    "DISTRICT": "Jhansi",
-    "STATE": "U.P.",
-    "PIN": "284002",
-    "MOB NO": "9452598810/9936990768",
-    "Email Id": "rahul.agrawal542@gmail.com",
-    "Gstin": "09AFQPA2036K1ZE",
-    "Pan": "AFQPA2036K",
-    "Aadhar": "742276890457",
-    "": ""
+    "Dealer Firm/ Site Name /Influencer Name": "giriraj steel ",
+    "Contact Person": "giriraj",
+    "Status of Contact Person": "EXISTING DEALER",
+    "Location": "jhansi",
+    "District": "jhansi",
+    "Contact no.": "9711564007",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "Kamdhenu NXT, Raipur ISI TMT",
+    "Remarks ": "Talking about increase the sale and coverage new sub dealer."
   },
   {
-    "DEALER NAME": "Mangal Traders",
-    "CONTACT PERSON": "Vivek Agarwal",
-    "ADDRESS": "196,Near RTO Office,Near Sun International School,Kanpur Road",
-    "TOWN": "Jhansi",
-    "DISTRICT": "Jhansi",
-    "STATE": "U.P.",
-    "PIN": "284001",
-    "MOB NO": "9415113593",
-    "Email Id": "",
-    "Gstin": "09ABYPA4041L1ZB",
-    "Pan": "ABYPA4041L",
-    "Aadhar": "",
-    "": ""
+    "Dealer Firm/ Site Name /Influencer Name": "jasodha steel ",
+    "Contact Person": "shivam",
+    "Status of Contact Person": "EXISTING DEALER",
+    "Location": "jhansi",
+    "District": "jhansi",
+    "Contact no.": "7985537163",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "Kamdhenu NXT, Raipur ISI TMT,SAIL",
+    "Remarks ": "talking about organize the manson meet."
   },
   {
-    "DEALER NAME": "Agarwal Steel Corporation",
-    "CONTACT PERSON": "Ashok Kumar Agrawal",
-    "ADDRESS": "Behind Of Munna Lal Power House,Antia Tal",
-    "TOWN": "Jhansi",
-    "DISTRICT": "Jhansi",
-    "STATE": "U.P.",
-    "PIN": "284002",
-    "MOB NO": "9415030320",
-    "Email Id": "",
-    "Gstin": "09ABAPA7559D1ZV",
-    "Pan": "ABAPA7559D",
-    "Aadhar": "573585632526",
-    "": ""
+    "Dealer Firm/ Site Name /Influencer Name": "Samaiya Steel",
+    "Contact Person": "Manish",
+    "Status of Contact Person": "EXISTING DEALER",
+    "Location": "Lalitpur",
+    "District": "Lalitpur",
+    "Contact no.": "8299661526",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "Kamdhenu NXT, Raipur ISI TMT, Meenakshi ",
+    "Remarks ": "Talking about increase the sale and coverage new sub dealer."
   },
   {
-    "DEALER NAME": "Neha Steels And Trading Corporation",
-    "CONTACT PERSON": "Dashrath Prasad Gupta",
-    "ADDRESS": "Opp.Naiyon Ka Mandir,Near Syndicate Bank",
-    "TOWN": "Jhansi",
-    "DISTRICT": "Jhansi",
-    "STATE": "U.P.",
-    "PIN": "284003",
-    "MOB NO": "9415113362",
-    "Email Id": "dashrathprasadgupta01@gmail.com",
-    "Gstin": "09AFLPG5127L1Z5",
-    "Pan": "AFLPG5127L",
-    "Aadhar": "821957885833",
-    "": ""
+    "Dealer Firm/ Site Name /Influencer Name": "Samaiya traders",
+    "Contact Person": "samiya",
+    "Status of Contact Person": "EXISTING DEALER",
+    "Location": "Lalitpur",
+    "District": "Lalitpur",
+    "Contact no.": "7007866819",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "Kamdhenu NXT, Raipur ISI TMT, Meenakshi ",
+    "Remarks ": "Talking about increase the sale and coverage new sub dealer."
   },
   {
-    "DEALER NAME": "Jai Durga Steels",
-    "CONTACT PERSON": "Rakesh Shivhare",
-    "ADDRESS": "Civil Line Near Kunj Bihari Mandir,Gwalior Road",
-    "TOWN": "Jhansi",
-    "DISTRICT": "Jhansi",
-    "STATE": "U.P.",
-    "PIN": "284001",
-    "MOB NO": "8808088101",
-    "Email Id": "nikhil.shivhare25@gmail.com",
-    "Gstin": "09AHBPS3508D1ZJ",
-    "Pan": "AHBPS3508D",
-    "Aadhar": "924346525141",
-    "": ""
+    "Dealer Firm/ Site Name /Influencer Name": "Sangam steel",
+    "Contact Person": "Manoj Samaiya",
+    "Status of Contact Person": "EXISTING DEALER",
+    "Location": "Lalitpur",
+    "District": "Lalitpur",
+    "Contact no.": "6388399862",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "Kamdhenu NXT, Raipur ISI TMT, GK TMT",
+    "Remarks ": "Talking about increase the sale and coverage new sub dealer."
   },
   {
-    "DEALER NAME": "Jagdamba Steel Corporation",
-    "CONTACT PERSON": "Sanjay Gupta",
-    "ADDRESS": "1382 Nai Basti Sharda Hills Colony,Opp.Naiyon Ka Mandir,Near Syndicate Bank",
-    "TOWN": "Jhansi",
-    "DISTRICT": "Jhansi",
-    "STATE": "U.P.",
-    "PIN": "284003",
-    "MOB NO": "9415113376",
-    "Email Id": "",
-    "Gstin": "09ABLPG4110B1Z9",
-    "Pan": "ABLPG4110B",
-    "Aadhar": "818179781124",
-    "": ""
+    "Dealer Firm/ Site Name /Influencer Name": "vardhman steel",
+    "Contact Person": "Anup",
+    "Status of Contact Person": "EXISTING DEALER",
+    "Location": "Lalitpur",
+    "District": "Lalitpur",
+    "Contact no.": "6394967677",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "Kamdhenu NXT, Raipur ISI TMT",
+    "Remarks ": "taking about organise manson meet"
   },
   {
-    "DEALER NAME": "Mathu Lal Steel",
-    "CONTACT PERSON": "Ujjaal Agrawal",
-    "ADDRESS": "Badagao Gate Bahar",
-    "TOWN": "Jhansi",
-    "DISTRICT": "Jhansi",
-    "STATE": "U.P.",
-    "PIN": "284002",
-    "MOB NO": "7408444775",
-    "Email Id": "",
-    "Gstin": "09DVGPA0091D1Z0",
-    "Pan": "DVGPA0091D",
-    "Aadhar": "",
-    "": ""
+    "Dealer Firm/ Site Name /Influencer Name": "vardhman steel and hardware",
+    "Contact Person": "amit",
+    "Status of Contact Person": "EXISTING DEALER",
+    "Location": "Lalitpur",
+    "District": "Lalitpur",
+    "Contact no.": "9450038019",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "Kamdhenu NXT, Raipur ISI TMT",
+    "Remarks ": "taking about organise manson meet"
   },
   {
-    "DEALER NAME": "O.S.Steel",
-    "CONTACT PERSON": "Rajesh Gupta",
-    "ADDRESS": "Sharda Hills Colony,Antia Talab",
-    "TOWN": "Jhansi",
-    "DISTRICT": "Jhansi",
-    "STATE": "U.P.",
-    "PIN": "284003",
-    "MOB NO": "7652059758",
-    "Email Id": "",
-    "Gstin": "09AAEFO7875M1ZE",
-    "Pan": "ACCPG5665M",
-    "Aadhar": "83485910 7787",
-    "": ""
+    "Dealer Firm/ Site Name /Influencer Name": "Bam bam mahadev ",
+    "Contact Person": "Abhisek",
+    "Status of Contact Person": "EXISTING DEALER",
+    "Location": "Lalitpur",
+    "District": "Lalitpur",
+    "Contact no.": "6392278566",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "Kay2 Xenox, Raipur ISI TMT",
+    "Remarks ": "market is going to upward"
   },
   {
-    "DEALER NAME": "Jasodha Steel Cororation",
-    "CONTACT PERSON": "Manoj Pal",
-    "ADDRESS": "Near Shivpuri Highay, Infront of Namo Homes",
-    "TOWN": "Jhansi",
-    "DISTRICT": "Jhansi",
-    "STATE": "U.P.",
-    "PIN": "284003",
-    "MOB NO": "7985537163",
-    "Email Id": "",
-    "Gstin": "09EASPP5270H1Z0",
-    "Pan": "EASPP5270H",
-    "Aadhar": "2384 9493 7985",
-    "": ""
+    "Dealer Firm/ Site Name /Influencer Name": "jai mahakali traders",
+    "Contact Person": "manish",
+    "Status of Contact Person": "EXISTING DEALER",
+    "Location": "mehroni",
+    "District": "Lalitpur",
+    "Contact no.": "8840163100",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "Kamdhenu NXT, Raipur ISI TMT",
+    "Remarks ": "taking about organise manson meet"
   },
   {
-    "DEALER NAME": "Ram Narayan Lohiya Iron Store",
-    "CONTACT PERSON": "Sanjeev Kumar Lohia/Ashu Lohia",
-    "ADDRESS": "Under Over Bridge,Jhansi Road",
-    "TOWN": "Mauranipur",
-    "DISTRICT": "Jhansi",
-    "STATE": "U.P.",
-    "PIN": "284204",
-    "MOB NO": "9889901806",
-    "Email Id": "",
-    "Gstin": "09AAZPL7084Q1ZA",
-    "Pan": "AAZPL7084Q",
-    "Aadhar": "220722728054",
-    "": ""
+    "Dealer Firm/ Site Name /Influencer Name": "jai ram singh",
+    "Contact Person": "jairam",
+    "Status of Contact Person": "EXISTING DEALER",
+    "Location": "mehroni",
+    "District": "Lalitpur",
+    "Contact no.": "9794727678",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "Kamdhenu NXT, Raipur ISI TMT",
+    "Remarks ": "taking about organise manson meet"
   },
   {
-    "DEALER NAME": "Shivangi Steels",
-    "CONTACT PERSON": "Subhesh Kandeli/Shibbu Kandeli",
-    "ADDRESS": "Adhat Bazar Main Market ",
-    "TOWN": "chirgaon ",
-    "DISTRICT": "jhansi",
-    "STATE": "U.P.",
-    "PIN": "284301",
-    "MOB NO": "9415092895/8299263726",
-    "Email Id": "",
-    "Gstin": "09ALIPK1336J1Z0",
-    "Pan": "ALIPK1336J",
-    "Aadhar": "576302917375",
-    "": ""
+    "Dealer Firm/ Site Name /Influencer Name": "jai  shree balaji traders ",
+    "Contact Person": "narendra sahu",
+    "Status of Contact Person": "EXISTING DEALER",
+    "Location": "mehroni",
+    "District": "Lalitpur",
+    "Contact no.": "9415946026",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "Kamdhenu NXT, Raipur ISI TMT",
+    "Remarks ": "Talking about increase the sale and coverage new sub dealer."
   },
   {
-    "DEALER NAME": "Jai Balaji Traders",
-    "CONTACT PERSON": "Saurabh Agarwal",
-    "ADDRESS": "Near Bus Stand",
-    "TOWN": "Baruasagar",
-    "DISTRICT": "Jhansi",
-    "STATE": "U.P.",
-    "PIN": "284201",
-    "MOB NO": "9415946026",
-    "Email Id": "",
-    "Gstin": "09AAQFJ9947D1ZP",
-    "Pan": "AAQFJ9947D",
-    "Aadhar": "418122500414",
-    "": ""
+    "Dealer Firm/ Site Name /Influencer Name": "Sri Gyan Sagar fertilizer",
+    "Contact Person": "Abhi",
+    "Status of Contact Person": "EXISTING DEALER",
+    "Location": "Mehroni",
+    "District": "Lalitpur",
+    "Contact no.": "9651633938",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "Kamdhenu NXT, Raipur ISI TMT",
+    "Remarks ": "talking about organize the manson meet."
   },
   {
-    "DEALER NAME": "New Vishindas Steels",
-    "CONTACT PERSON": "Devi Lal Sahajwani",
-    "ADDRESS": "1888,1889,1892,Near Banti Dhaba,Main Road,Bijoli,Lalitpur Road",
-    "TOWN": "Bijoli",
-    "DISTRICT": "Jhansi",
-    "STATE": "U.P.",
-    "PIN": "284003",
-    "MOB NO": "9415412105",
-    "Email Id": "newvishandassteels@gmail.com",
-    "Gstin": "09AASPN5446P1Z8",
-    "Pan": "AASFN5446P",
-    "Aadhar": "482734921067",
-    "": ""
+    "Dealer Firm/ Site Name /Influencer Name": "yash enterprises",
+    "Contact Person": "yash",
+    "Status of Contact Person": "EXISTING DEALER",
+    "Location": "madawara",
+    "District": "Lalitpur",
+    "Contact no.": "9621614700",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "Kamdhenu NXT, Raipur ISI TMT",
+    "Remarks ": "talking about organize the manson meet."
   },
   {
-    "DEALER NAME": "Geda Enterrises",
-    "CONTACT PERSON": "Narottam Geda",
-    "ADDRESS": "Mandi road, Gursarai",
-    "TOWN": "Gursarai",
-    "DISTRICT": "Jhansi",
-    "STATE": "U.P.",
-    "PIN": "284202",
-    "MOB NO": "7355255072",
-    "Email Id": "",
-    "Gstin": "09AUKPG8856A1ZG",
-    "Pan": "",
-    "Aadhar": "",
-    "": ""
+    "Dealer Firm/ Site Name /Influencer Name": "vinay traders",
+    "Contact Person": "vinay",
+    "Status of Contact Person": "new prospectus",
+    "Location": "Orai",
+    "District": "Jalaun",
+    "Contact no.": "9810348788",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "Tata tmt, Meenakshi tmt, Raipur tmt",
+    "Remarks ": "take some intrest but regarding to work not clear."
   },
   {
-    "DEALER NAME": "Shivhare Sanitary",
-    "CONTACT PERSON": "Anurag Shbivhare",
-    "ADDRESS": "Babina",
-    "TOWN": "Babina",
-    "DISTRICT": "Jhansi",
-    "STATE": "U.P.",
-    "PIN": "284001",
-    "MOB NO": "9935298069",
-    "Email Id": "",
-    "Gstin": "09BTYPS6393C1ZR",
-    "Pan": "",
-    "Aadhar": "",
-    "": ""
+    "Dealer Firm/ Site Name /Influencer Name": "Rusia Enterrises",
+    "Contact Person": "Prabhat",
+    "Status of Contact Person": "non dealer",
+    "Location": "Orai",
+    "District": "Jalaun",
+    "Contact no.": "9695395785",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": " Meenakshi tmt, Durgapur tmt",
+    "Remarks ": "take some intrest but regarding to work not clear."
   },
   {
-    "DEALER NAME": "Neeraj traders",
-    "CONTACT PERSON": "abhijeet singh",
-    "ADDRESS": "PUNAWALI, ROAD, Raksa, Uttar Pradesh 284419",
-    "TOWN": "raksha",
-    "DISTRICT": "jhansi",
-    "STATE": "U.P.",
-    "PIN": "284419",
-    "MOB NO": "7619994694",
-    "Email Id": "abhijeet01.business@gmail.com",
-    "Gstin": "09GEBPS6273E1Z5",
-    "Pan": "GEBPS6273E",
-    "Aadhar": "78096730 5293",
-    "": ""
+    "Dealer Firm/ Site Name /Influencer Name": "S.K. Traders",
+    "Contact Person": "Saran",
+    "Status of Contact Person": "EXISTING DEALER",
+    "Location": "Orai",
+    "District": "Jalaun",
+    "Contact no.": "7398750799",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "Kamdhenu Nxt, Meeakshi, Raipur ISI TMT",
+    "Remarks ": "market is going to upward"
   },
   {
-    "DEALER NAME": "Giriraj Steel",
-    "CONTACT PERSON": "Manish Lahariya",
-    "ADDRESS": "lalitpur Shivpuri bypass road ,Sijwaha, Uttar Pradesh 284419",
-    "TOWN": "sijwaha",
-    "DISTRICT": "jhansi",
-    "STATE": "U.P.",
-    "PIN": "284419",
-    "MOB NO": "9711564007",
-    "Email Id": "Girirajsteel581@gmail.com",
-    "Gstin": "09ABBFG7633D1ZI",
-    "Pan": "ACGPL7660R",
-    "Aadhar": "60161743 5624",
-    "": ""
+    "Dealer Firm/ Site Name /Influencer Name": "Motilal Devendra Kumar",
+    "Contact Person": "Abhisek",
+    "Status of Contact Person": "non dealer",
+    "Location": "Orai",
+    "District": "Jalaun",
+    "Contact no.": "8922824565",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "Panther, Raipur ISI TMT",
+    "Remarks ": "due to low margin dealer loose rheir intrest"
   },
   {
-    "DEALER NAME": "jai sidh baba",
-    "CONTACT PERSON": "sarman lal",
-    "ADDRESS": " Kuluwa Khas, Uttar Pradesh near HPCL petrol pump ",
-    "TOWN": "ninaura",
-    "DISTRICT": "jhansi",
-    "STATE": "U.P.",
-    "PIN": "284205",
-    "MOB NO": "6260257486",
-    "Email Id": "",
-    "Gstin": "09AJJPL0550H1ZB",
-    "Pan": "AIJPL0550H",
-    "Aadhar": "36461919 0674",
-    "": ""
+    "Dealer Firm/ Site Name /Influencer Name": "TM Traders",
+    "Contact Person": "ajay",
+    "Status of Contact Person": "new prospectus",
+    "Location": "jajaun",
+    "District": "Jalaun",
+    "Contact no.": "9415540454",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "Panther, Raipur ISI TMT",
+    "Remarks ": "due to low margin dealer loose rheir intrest"
   },
   {
-    "DEALER NAME": "Sidhi vinayak traders ",
-    "CONTACT PERSON": "Ashok Agarwal ",
-    "ADDRESS": "Charkhari Byp Rd",
-    "TOWN": "mahoba ",
-    "DISTRICT": "mahoba",
-    "STATE": "U.P.",
-    "PIN": "210427",
-    "MOB NO": "8299642073",
-    "Email Id": "",
-    "Gstin": "09ADNPA1644A2Z1",
-    "Pan": "",
-    "Aadhar": "",
-    "": ""
+    "Dealer Firm/ Site Name /Influencer Name": "SUNDAY",
+    "Contact Person": "",
+    "Status of Contact Person": "",
+    "Location": "",
+    "District": "",
+    "Contact no.": "",
+    "Visit With Incharge/Dist./Self": "",
+    "Brands available at Shop": "",
+    "Remarks ": ""
   },
   {
-    "DEALER NAME": "adarsh loha Bhandar ",
-    "CONTACT PERSON": "adesh gupta ",
-    "ADDRESS": "Charkhari Byp Rd",
-    "TOWN": "mahoba ",
-    "DISTRICT": "mahoba",
-    "STATE": "U.P.",
-    "PIN": "210427",
-    "MOB NO": "8090366624",
-    "Email Id": "",
-    "Gstin": "09AKTPG1218K1ZW",
-    "Pan": "",
-    "Aadhar": "",
-    "": ""
+    "Dealer Firm/ Site Name /Influencer Name": "vardhman steel",
+    "Contact Person": "RAJEEV JAIN",
+    "Status of Contact Person": "EXISTING DEALER",
+    "Location": "JHANSI",
+    "District": "JHANSI",
+    "Contact no.": "7897957110",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "Kamdhenu NXT, Raipur ISI TMT",
+    "Remarks ": "taking about organise manson meet"
   },
   {
-    "DEALER NAME": "bharat traders",
-    "CONTACT PERSON": "rishabh Singh yadav",
-    "ADDRESS": "moth",
-    "TOWN": "moth",
-    "DISTRICT": "jhansi ",
-    "STATE": "U.P.",
-    "PIN": "284303",
-    "MOB NO": "9695331933",
-    "Email Id": "rishabhyadav284303@gmail.com",
-    "Gstin": "09AOTPY2230H2ZE",
-    "Pan": "AOTPY2230H",
-    "Aadhar": "3764 0747 0746",
-    "": ""
+    "Dealer Firm/ Site Name /Influencer Name": "Agrawal steel",
+    "Contact Person": "Ashok ",
+    "Status of Contact Person": "EXISTING DEALER",
+    "Location": "Jhansi",
+    "District": "jhansi",
+    "Contact no.": "9415030320",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "Kamdhenu NXT, Raipur ISI TMT, GK TMT",
+    "Remarks ": "due to low margin dealer loose rheir intrest"
   },
   {
-    "DEALER NAME": "SRI RAWATPURA SARKAR TRADERS",
-    "CONTACT PERSON": "piyush sen",
-    "ADDRESS": "BUS STAND DEORI SINGHPURA  RANIPURA",
-    "TOWN": "Ranipura",
-    "DISTRICT": "jhansi ",
-    "STATE": "U.P.",
-    "PIN": "284205",
-    "MOB NO": "9956219631",
-    "Email Id": "",
-    "Gstin": "09GXUPS5518A1ZX",
-    "Pan": "",
-    "Aadhar": "",
-    "": ""
+    "Dealer Firm/ Site Name /Influencer Name": "O S Steel",
+    "Contact Person": "Rajesh",
+    "Status of Contact Person": "EXISTING DEALER",
+    "Location": "jhansi",
+    "District": "jhansi",
+    "Contact no.": "7652059758",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "Kamdhenu NXT, Raipur ISI TMT",
+    "Remarks ": "taking about organise manson meet"
   },
   {
-    "DEALER NAME": "ma kamakhya traders",
-    "CONTACT PERSON": "raghvendra kushwaha ",
-    "ADDRESS": "Karguan Gaon, Jhansi",
-    "TOWN": "jhansi",
-    "DISTRICT": "jhansi",
-    "STATE": "U.P.",
-    "PIN": "284128",
-    "MOB NO": "9450527545",
-    "Email Id": "",
-    "Gstin": "",
-    "Pan": "",
-    "Aadhar": "",
-    "": ""
+    "Dealer Firm/ Site Name /Influencer Name": "Neha Steel",
+    "Contact Person": "Neetu",
+    "Status of Contact Person": "EXISTING DEALER",
+    "Location": "jhansi",
+    "District": "jhansi",
+    "Contact no.": "9450081221",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "Kamdhenu NXT, Raipur ISI TMT ",
+    "Remarks ": "talking about organize the manson meet."
   },
   {
-    "DEALER NAME": "Vardhman steel ",
-    "CONTACT PERSON": "rajeev jain",
-    "ADDRESS": "1472,Antiya Tal Road,Civil Line,Near BKD Chauraha",
-    "TOWN": "Jhansi",
-    "DISTRICT": "jhansi",
-    "STATE": "U.P.",
-    "PIN": "284002",
-    "MOB NO": "7897957110",
-    "Email Id": "",
-    "Gstin": "09ABKPJ5305L1ZF",
-    "Pan": "",
-    "Aadhar": "",
-    "": ""
+    "Dealer Firm/ Site Name /Influencer Name": "Jai Durga steel",
+    "Contact Person": "Nikhil",
+    "Status of Contact Person": "EXISTING DEALER",
+    "Location": "Jhansi",
+    "District": "jhansi",
+    "Contact no.": "7007923315",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "Kamdhenu NXT, Raipur ISI TMT,SAIL",
+    "Remarks ": "Talking about increase the sale and coverage new sub dealer."
   },
   {
-    "DEALER NAME": "T.M traders ",
-    "CONTACT PERSON": "Ajay Srivastav ",
-    "ADDRESS": "BHAWANI RAM NEAR ABHINANDAN GUEST HOUSE",
-    "TOWN": "jalaun",
-    "DISTRICT": "Jalaun ",
-    "STATE": "U.P.",
-    "PIN": "285123",
-    "MOB NO": "9415540454",
-    "Email Id": "",
-    "Gstin": "09BBLPS7455J1ZT",
-    "Pan": "",
-    "Aadhar": "",
-    "": ""
+    "Dealer Firm/ Site Name /Influencer Name": "Hari Ram Ram Prakash",
+    "Contact Person": "Rahul",
+    "Status of Contact Person": "EXISTING DEALER",
+    "Location": "jhansi",
+    "District": "jhansi",
+    "Contact no.": "7905225241",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "Kamdhenu NXT, Raipur ISI TMT",
+    "Remarks ": "littele improvement in sale"
   },
   {
-    "DEALER NAME": "vinay traders",
-    "CONTACT PERSON": "vinay",
-    "ADDRESS": "",
-    "TOWN": "orai",
-    "DISTRICT": "Jalaun ",
-    "STATE": "U.P.",
-    "PIN": "285001",
-    "MOB NO": "9839769504",
-    "Email Id": "",
-    "Gstin": "",
-    "Pan": "",
-    "Aadhar": "",
-    "": ""
+    "Dealer Firm/ Site Name /Influencer Name": "Jagdamba Steel",
+    "Contact Person": "Sanjay Gupta",
+    "Status of Contact Person": "EXISTING DEALER",
+    "Location": "jhansi",
+    "District": "jhansi",
+    "Contact no.": "9415113376",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "Kamdhenu NXT, Raipur ISI TMT",
+    "Remarks ": "taking about organise manson meet"
   },
   {
-    "DEALER NAME": "S.K Traders ",
-    "CONTACT PERSON": "sachin gupta ",
-    "ADDRESS": "KALPI ROAD,, PATEL NAGAR, ORAI",
-    "TOWN": "orai",
-    "DISTRICT": "Jalaun ",
-    "STATE": "U.P.",
-    "PIN": "285001",
-    "MOB NO": "7398750799",
-    "Email Id": "",
-    "Gstin": "09AGHPG9908Q2ZJ",
-    "Pan": "",
-    "Aadhar": "",
-    "": ""
+    "Dealer Firm/ Site Name /Influencer Name": "mangal traders",
+    "Contact Person": "vivek",
+    "Status of Contact Person": "EXISTING DEALER",
+    "Location": "jhansi",
+    "District": "jhansi",
+    "Contact no.": "9415113593",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "Kamdhenu NXT, Raipur ISI TMT",
+    "Remarks ": "Talking about increase the sale and coverage new sub dealer."
   },
   {
-    "DEALER NAME": "SARTHAK STEEL CORPORATION",
-    "CONTACT PERSON": "rakhi sahu",
-    "ADDRESS": "ISHAI TOLA KHATI BABA",
-    "TOWN": "jhansi ",
-    "DISTRICT": "jhansi ",
-    "STATE": "U.P.",
-    "PIN": "284003",
-    "MOB NO": "8756087065",
-    "Email Id": "",
-    "Gstin": "09IIXPS0642P1ZO",
-    "Pan": "IIXPS0642P",
-    "Aadhar": "4160 5372 7271",
-    "": ""
+    "Dealer Firm/ Site Name /Influencer Name": "Garg Steel",
+    "Contact Person": "Mitesh",
+    "Status of Contact Person": "EXISTING DEALER",
+    "Location": "Jhansi",
+    "District": "jhansi",
+    "Contact no.": "8318929257",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "Kamdhenu NXT, Raipur ISI TMT ",
+    "Remarks ": "market is going to upward"
   },
   {
-    "DEALER NAME": "Samaiya Traders",
-    "CONTACT PERSON": "Rajeev Samaiya",
-    "ADDRESS": "Station Road,Near Hotel Lalit Palace",
-    "TOWN": "Station Road",
-    "DISTRICT": "Lalitpur",
-    "STATE": "U.P.",
-    "PIN": "284403",
-    "MOB NO": "9451926939/9794563434",
-    "Email Id": "",
-    "Gstin": "09AHYPS7953F1ZB",
-    "Pan": "AHYPS7953F",
-    "Aadhar": "824410907772",
-    "": ""
+    "Dealer Firm/ Site Name /Influencer Name": "shivhare sanitary",
+    "Contact Person": "anurag",
+    "Status of Contact Person": "EXISTING DEALER",
+    "Location": "babina",
+    "District": "jhansi",
+    "Contact no.": "9935298069",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "Kamdhenu NXT, Raipur ISI TMT",
+    "Remarks ": "Talking about increase the sale and coverage new sub dealer."
   },
   {
-    "DEALER NAME": "Samaiya Steels",
-    "CONTACT PERSON": "Manish Kumar Samaiya",
-    "ADDRESS": "Chowka Bag Sagar Road",
-    "TOWN": "Lalitpur",
-    "DISTRICT": "Lalitpur",
-    "STATE": "U.P.",
-    "PIN": "284403",
-    "MOB NO": "9451926939 / 8858557385",
-    "Email Id": "manishsamaiya.ms@gmail.com",
-    "Gstin": "09AIVPS0595H1ZF",
-    "Pan": "AIVPS0595H",
-    "Aadhar": "915192687015",
-    "": ""
+    "Dealer Firm/ Site Name /Influencer Name": "Head Office Visit",
+    "Contact Person": "",
+    "Status of Contact Person": "",
+    "Location": "",
+    "District": "",
+    "Contact no.": "",
+    "Visit With Incharge/Dist./Self": "",
+    "Brands available at Shop": "",
+    "Remarks ": ""
   },
   {
-    "DEALER NAME": "Vardhman Steel and Hardware ",
-    "CONTACT PERSON": "Ashmit Jain/Anup Jain",
-    "ADDRESS": "New Antara Kirana Store",
-    "TOWN": "Rawatyana",
-    "DISTRICT": "Lalitpur",
-    "STATE": "U.P.",
-    "PIN": "284403",
-    "MOB NO": "9335965559 / 9415586860",
-    "Email Id": "pankajjain9144@gmail.com",
-    "Gstin": "09CSVPJ0022Q1Z5",
-    "Pan": "CSVPJ0022Q",
-    "Aadhar": "249450374365",
-    "": ""
+    "Dealer Firm/ Site Name /Influencer Name": "shri ganesh kamla enterprises",
+    "Contact Person": "ashish",
+    "Status of Contact Person": "non dealer",
+    "Location": "babina ",
+    "District": "jhansi",
+    "Contact no.": "9919242223",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "raipur , kamdhenu gold",
+    "Remarks ": "benifts of kamdhenu nxt"
   },
   {
-    "DEALER NAME": "Sangam Steel",
-    "CONTACT PERSON": "Manoj Kumar Samaiya",
-    "ADDRESS": "Near Escort Tractor Agency",
-    "TOWN": "Sagar Road",
-    "DISTRICT": "Lalitpur",
-    "STATE": "U.P.",
-    "PIN": "284403",
-    "MOB NO": "6388399862",
-    "Email Id": "",
-    "Gstin": "09AHYPS9300G1ZO",
-    "Pan": "AHYPS9300G",
-    "Aadhar": "",
-    "": ""
+    "Dealer Firm/ Site Name /Influencer Name": "vishnadas steel ",
+    "Contact Person": "divanshu",
+    "Status of Contact Person": "EXISTING DEALER",
+    "Location": "rajgarh",
+    "District": "jhansi",
+    "Contact no.": "9695297749",
+    "Visit With Incharge/Dist./Self": "INCHARGE",
+    "Brands available at Shop": "Kamdhenu NXT, Raipur ISI TMT",
+    "Remarks ": "Talking about increase the sale and coverage new sub dealer."
   },
   {
-    "DEALER NAME": "Geeta Traders",
-    "CONTACT PERSON": "Mahesh Kumar Malaiya/Rajesh ",
-    "ADDRESS": "Chaubayana,Talbehat",
-    "TOWN": "Talbehat",
-    "DISTRICT": "Lalitpur",
-    "STATE": "U.P.",
-    "PIN": "284126",
-    "MOB NO": "9415401869/8887674268",
-    "Email Id": "maheshmalaiya28@gmail.com",
-    "Gstin": "09AJAPM9390E1ZZ",
-    "Pan": "AJAPM9390E",
-    "Aadhar": "917211933904",
-    "": ""
+    "Dealer Firm/ Site Name /Influencer Name": "geeta traders",
+    "Contact Person": "suresh",
+    "Status of Contact Person": "EXISTING DEALER",
+    "Location": "talbahet",
+    "District": "Lalitpur",
+    "Contact no.": "8887674268",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "Kamdhenu NXT, Raipur ISI TMT",
+    "Remarks ": "Talking about increase the sale and coverage new sub dealer."
   },
   {
-    "DEALER NAME": "Yash Enterprises",
-    "CONTACT PERSON": "Abhinandan Kumar",
-    "ADDRESS": "Near Police Thana,Madawara",
-    "TOWN": "Madawara",
-    "DISTRICT": "Lalitpur",
-    "STATE": "U.P.",
-    "PIN": "284403",
-    "MOB NO": "9621614700",
-    "Email Id": "yashjain1976@gmail.com",
-    "Gstin": "09AGTPJ4546R1ZB",
-    "Pan": "AGTPJ4546R",
-    "Aadhar": "472467063670",
-    "": ""
+    "Dealer Firm/ Site Name /Influencer Name": "bhandari traders",
+    "Contact Person": "avdesh",
+    "Status of Contact Person": "EXISTING DEALER",
+    "Location": "talbahet",
+    "District": "Lalitpur",
+    "Contact no.": "9450033042",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "Kamdhenu NXT, Raipur ISI TMT",
+    "Remarks ": "Talking about increase the sale and coverage new sub dealer."
   },
   {
-    "DEALER NAME": "Sri Gyan Sagar Fertilizers",
-    "CONTACT PERSON": "Amod Kumar Jain",
-    "ADDRESS": "Teekamgarh Road,Mahroni",
-    "TOWN": "Mehroni",
-    "DISTRICT": "Lalitpur",
-    "STATE": "U.P.",
-    "PIN": "284405",
-    "MOB NO": "9415401353",
-    "Email Id": "",
-    "Gstin": "09AEXPJ5800L1ZW",
-    "Pan": "AEXPJ5800L",
-    "Aadhar": "624484827512",
-    "": ""
+    "Dealer Firm/ Site Name /Influencer Name": "gahoi machinery parts",
+    "Contact Person": "gahoi",
+    "Status of Contact Person": "EXISTING DEALER",
+    "Location": "talbahet",
+    "District": "Lalitpur",
+    "Contact no.": "9415502772",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "Kamdhenu NXT, Raipur ISI TMT",
+    "Remarks ": "Talking about increase the sale and coverage new sub dealer."
   },
   {
-    "DEALER NAME": "Sarraf Enterprises",
-    "CONTACT PERSON": "Sanjeev Kumar Jain",
-    "ADDRESS": "Teekamgarh Road,Banpur Road Chauraha,Mehroni",
-    "TOWN": "Mehroni",
-    "DISTRICT": "Lalitpur",
-    "STATE": "U.P.",
-    "PIN": "284405",
-    "MOB NO": "9450032905",
-    "Email Id": "sarrafsanjeev740@gmail.com",
-    "Gstin": "09ACVPJ6456C1Z7",
-    "Pan": "ACVPJ6456C",
-    "Aadhar": "546488653247",
-    "": ""
+    "Dealer Firm/ Site Name /Influencer Name": "Om Corporation",
+    "Contact Person": "Ayush",
+    "Status of Contact Person": "EXISTING DEALER",
+    "Location": "jhansi",
+    "District": "jhansi",
+    "Contact no.": "8127218962",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "Kamdhenu NXT, Raipur ISI TMT ",
+    "Remarks ": "Talking about increase the sale and coverage new sub dealer."
   },
   {
-    "DEALER NAME": "Bhandari Traders",
-    "CONTACT PERSON": "Vikas Kumar Jain",
-    "ADDRESS": "396/45,Chaubeyana,Talbehat",
-    "TOWN": "Talbehat",
-    "DISTRICT": "Lalitpur",
-    "STATE": "U.P.",
-    "PIN": "284126",
-    "MOB NO": "9450033042",
-    "Email Id": "bhandaritbt@gmail.com",
-    "Gstin": "09AKGPJ0005J2ZG",
-    "Pan": "AKGPJ0005J",
-    "Aadhar": "612410204704",
-    "": ""
+    "Dealer Firm/ Site Name /Influencer Name": "mahaveer steel ",
+    "Contact Person": "shivam",
+    "Status of Contact Person": "new prospectus",
+    "Location": "jhansi",
+    "District": "jhansi",
+    "Contact no.": "6306158382",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": ", Raipur ISI TMT ",
+    "Remarks ": "benifts of kamdhenu nxt"
   },
   {
-    "DEALER NAME": "Gahoi Machinery Parts",
-    "CONTACT PERSON": "Narendra Kumar Gupta",
-    "ADDRESS": "Main Road,Talbehat",
-    "TOWN": "Talbehat",
-    "DISTRICT": "Lalitpur",
-    "STATE": "U.P.",
-    "PIN": "284126",
-    "MOB NO": "9415502772",
-    "Email Id": "",
-    "Gstin": "09AFCPG3740A1Z2",
-    "Pan": "AFCPG3740A",
-    "Aadhar": "750759451360",
-    "": ""
+    "Dealer Firm/ Site Name /Influencer Name": "Mathoolal Steel",
+    "Contact Person": "ujjawal",
+    "Status of Contact Person": "EXISTING DEALER",
+    "Location": "jhansi",
+    "District": "jhansi",
+    "Contact no.": "7408444775",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "Kamdhenu NXT, Raipur ISI TMT",
+    "Remarks ": "Talking about increase the sale and coverage new sub dealer."
   },
   {
-    "DEALER NAME": "Jay Shri Balaji Traders",
-    "CONTACT PERSON": "Narendra Kumar Sahu",
-    "ADDRESS": "Kugaghoshi,Madawara Road,Mahroni",
-    "TOWN": "Mehroni",
-    "DISTRICT": "Lalitpur",
-    "STATE": "U.P.",
-    "PIN": "284405",
-    "MOB NO": "8004835750",
-    "Email Id": "",
-    "Gstin": "09ATKPS4839E2Z6",
-    "Pan": "ATKPS4839E",
-    "Aadhar": "855737303279",
-    "": ""
+    "Dealer Firm/ Site Name /Influencer Name": "shivangi steel ",
+    "Contact Person": "subesh",
+    "Status of Contact Person": "EXISTING DEALER",
+    "Location": "chirgaon",
+    "District": "jhansi",
+    "Contact no.": "8299263726",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "Kamdhenu NXT, Raipur ISI TMT",
+    "Remarks ": "taking about organise manson meet"
   },
   {
-    "DEALER NAME": "Jai Maa Kali",
-    "CONTACT PERSON": "Pawan",
-    "ADDRESS": "Devgrah Road , Lalitpur",
-    "TOWN": "Lalitpur",
-    "DISTRICT": "Lalitpur",
-    "STATE": "U.P.",
-    "PIN": "284403",
-    "MOB NO": "9889400595",
-    "Email Id": "",
-    "Gstin": "09BP7PA8017BIZU",
-    "Pan": "",
-    "Aadhar": "",
-    "": ""
+    "Dealer Firm/ Site Name /Influencer Name": "krishna steel",
+    "Contact Person": "krishna",
+    "Status of Contact Person": "new prospects",
+    "Location": "jhansi",
+    "District": "jhansi",
+    "Contact no.": "9794452344",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": " Raipur ISI TMT",
+    "Remarks ": "explain about kamdhenu nxt benifit"
   },
   {
-    "DEALER NAME": "Jai Ram Enterprises",
-    "CONTACT PERSON": "Devendra",
-    "ADDRESS": "Teekamgrah Road , Mehroni",
-    "TOWN": "Mehroni",
-    "DISTRICT": "Lalitpur",
-    "STATE": "U.P.",
-    "PIN": "284405",
-    "MOB NO": "9794727678",
-    "Email Id": "",
-    "Gstin": "09AOJPP9132P1Z2",
-    "Pan": "",
-    "Aadhar": "",
-    "": ""
+    "Dealer Firm/ Site Name /Influencer Name": "tanishq agriculture",
+    "Contact Person": "tanishq",
+    "Status of Contact Person": "non dealer",
+    "Location": "chirgaon",
+    "District": "jhansi",
+    "Contact no.": "8840544009",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": " Raipur ISI TMT",
+    "Remarks ": "explain about kamdhenu nxt benifit"
   },
   {
-    "DEALER NAME": "bam bam enterprises  ( kay 2 xnox dealer)",
-    "CONTACT PERSON": "abhishek chaurasiya ",
-    "ADDRESS": "Kailguan Rd, Govind Nagar, Lalitpur, Uttar Pradesh ",
-    "TOWN": "Kelgauna",
-    "DISTRICT": "Lalitpur",
-    "STATE": "U.P.",
-    "PIN": "284403",
-    "MOB NO": "6392278566",
-    "Email Id": "",
-    "Gstin": "09ANZPC4856C1ZN",
-    "Pan": "",
-    "Aadhar": "",
-    "": ""
+    "Dealer Firm/ Site Name /Influencer Name": "bharat traders",
+    "Contact Person": "ayush",
+    "Status of Contact Person": "EXISTING DEALER",
+    "Location": "moth",
+    "District": "jhansi",
+    "Contact no.": "9695331933",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "Kamdhenu NXT, Raipur ISI TMT",
+    "Remarks ": "taking about organise manson meet"
   },
   {
-    "DEALER NAME": "Chandariya construction",
-    "CONTACT PERSON": "Gaurav Kumar Chanderiya",
-    "ADDRESS": "Kugaghoshi,Madawara Road,Mahroni",
-    "TOWN": "Mehroni",
-    "DISTRICT": "Lalitpur",
-    "STATE": "U.P.",
-    "PIN": "284405",
-    "MOB NO": "9453119923",
-    "Email Id": "",
-    "Gstin": "09BWBPG2437B1Z1",
-    "Pan": "BWBPG2437B",
-    "Aadhar": "37071953 2611",
-    "": ""
+    "Dealer Firm/ Site Name /Influencer Name": "uma enterprises",
+    "Contact Person": "uma",
+    "Status of Contact Person": "non dealer",
+    "Location": "chirgaon",
+    "District": "jhansi",
+    "Contact no.": "8299343686",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "Raipur isi tmt",
+    "Remarks ": "explain about kamdhenu nxt benifit"
   },
   {
-    "DEALER NAME": "Vardhman and sons",
-    "CONTACT PERSON": "Amit Jain",
-    "ADDRESS": "1218 Rawatyana 2 Lalitpur ",
-    "TOWN": "lalitpur ",
-    "DISTRICT": "Lalitpur",
-    "STATE": "U.P.",
-    "PIN": "284003",
-    "MOB NO": "9450038019",
-    "Email Id": "",
-    "Gstin": "09AECPJ8136N2Z1",
-    "Pan": "AECPJ8136N",
-    "Aadhar": "5931 3040 5514",
-    "": ""
+    "Dealer Firm/ Site Name /Influencer Name": "ms chadda trading company",
+    "Contact Person": "chadda",
+    "Status of Contact Person": "non dealer",
+    "Location": "jhansi",
+    "District": "jhansi",
+    "Contact no.": "9450078518",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": " Raipur ISI TMT",
+    "Remarks ": "explain about kamdhenu nxt benifit"
   },
   {
-    "DEALER NAME": "ABHINASH KUMAR & BROTHERS",
-    "CONTACT PERSON": "sonu samiya",
-    "ADDRESS": "Subhash Pura, Lalitpur, Uttar Pradesh ",
-    "TOWN": "Lalitpur",
-    "DISTRICT": "Lalitpur",
-    "STATE": "U.P.",
-    "PIN": "284403",
-    "MOB NO": "9794563434",
-    "Email Id": "",
-    "Gstin": "",
-    "Pan": "",
-    "Aadhar": "",
-    "": ""
-  },{"DEALER NAME":"Sunday"},{"DEALER NAME":"Leave"},{"DEALER NAME":"Holiday"}
-]
-;
+    "Dealer Firm/ Site Name /Influencer Name": "ram nariyan lohia iron store",
+    "Contact Person": "Anshu",
+    "Status of Contact Person": "EXISTING DEALER",
+    "Location": "mauranipur",
+    "District": "jhansi",
+    "Contact no.": "9889901806",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "Kamdhenu NXT, Raipur ISI TMT",
+    "Remarks ": "Talking about increase the sale and coverage new sub dealer."
+  },
+  {
+    "Dealer Firm/ Site Name /Influencer Name": "vaishnavi traders",
+    "Contact Person": "vaishnavi",
+    "Status of Contact Person": "non dealer",
+    "Location": "mauranipur",
+    "District": "jhansi",
+    "Contact no.": "7376860925",
+    "Visit With Incharge/Dist./Self": "self",
+    "Brands available at Shop": "Kamdhenu NXT, Raipur ISI TMT",
+    "Remarks ": "kamdhenu benefits , quality"
+  },
+  {
+    "Dealer Firm/ Site Name /Influencer Name": "jai   balaji traders ",
+    "Contact Person": "saurabh agarwal",
+    "Status of Contact Person": "EXISTING DEALER",
+    "Location": "baruasagr",
+    "District": "jhansi",
+    "Contact no.": "9415946026",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "Kamdhenu NXT, Raipur ISI TMT",
+    "Remarks ": "Talking about increase the sale and coverage new sub dealer."
+  },
+  {
+    "Dealer Firm/ Site Name /Influencer Name": "shri rawatpur sarkar traders",
+    "Contact Person": "piyush",
+    "Status of Contact Person": "EXISTING DEALER",
+    "Location": "ranipur",
+    "District": "jhansi",
+    "Contact no.": "9956219631",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "Kamdhenu NXT, Raipur ISI TMT",
+    "Remarks ": "Talking about increase the sale and coverage new sub dealer."
+  },
+  {
+    "Dealer Firm/ Site Name /Influencer Name": "mahakal steel",
+    "Contact Person": "ayush",
+    "Status of Contact Person": "non dealer",
+    "Location": "jhansi",
+    "District": "jhansi",
+    "Contact no.": "8707703186",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "Kamdhenu NXT, Raipur ISI TMT ",
+    "Remarks ": "kamdhenu benefits , quality"
+  },
+  {
+    "Dealer Firm/ Site Name /Influencer Name": "arohi trading company",
+    "Contact Person": "arun",
+    "Status of Contact Person": "new prospectus",
+    "Location": "Lalitpur",
+    "District": "Lalitpur",
+    "Contact no.": "9827758365",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "Kamdhenu NXT, Raipur ISI TMT, Meenakshi ",
+    "Remarks ": "intrested for kay2 xnox "
+  },
+  {
+    "Dealer Firm/ Site Name /Influencer Name": "Samaiya Steel",
+    "Contact Person": "Manish",
+    "Status of Contact Person": "EXISTING DEALER",
+    "Location": "Lalitpur",
+    "District": "Lalitpur",
+    "Contact no.": "8299661526",
+    "Visit With Incharge/Dist./Self": "INCHARGE",
+    "Brands available at Shop": "Kamdhenu NXT, Raipur ISI TMT, Meenakshi ",
+    "Remarks ": "Talking about increase the sale and coverage new sub dealer."
+  },
+  {
+    "Dealer Firm/ Site Name /Influencer Name": "Sangam steel",
+    "Contact Person": "Manoj Samaiya",
+    "Status of Contact Person": "EXISTING DEALER",
+    "Location": "Lalitpur",
+    "District": "Lalitpur",
+    "Contact no.": "6388399862",
+    "Visit With Incharge/Dist./Self": "INCHARGE",
+    "Brands available at Shop": "Kamdhenu NXT, Raipur ISI TMT, GK TMT",
+    "Remarks ": "Talking about increase the sale and coverage new sub dealer."
+  },
+  {
+    "Dealer Firm/ Site Name /Influencer Name": "vardhman steel",
+    "Contact Person": "Anup",
+    "Status of Contact Person": "EXISTING DEALER",
+    "Location": "Lalitpur",
+    "District": "Lalitpur",
+    "Contact no.": "6394967677",
+    "Visit With Incharge/Dist./Self": "INCHARGE",
+    "Brands available at Shop": "Kamdhenu NXT, Raipur ISI TMT",
+    "Remarks ": "taking about organise manson meet"
+  },
+  {
+    "Dealer Firm/ Site Name /Influencer Name": "Bam bam mahadev",
+    "Contact Person": "Abhisek",
+    "Status of Contact Person": "EXISTING DEALER",
+    "Location": "Lalitpur",
+    "District": "Lalitpur",
+    "Contact no.": "6392278566",
+    "Visit With Incharge/Dist./Self": "INCHARGE",
+    "Brands available at Shop": "Kay2 Xenox, Raipur ISI TMT",
+    "Remarks ": "market is going to upward"
+  },
+  {
+    "Dealer Firm/ Site Name /Influencer Name": "jai shree balaji traders ",
+    "Contact Person": "narendra sahu",
+    "Status of Contact Person": "EXISTING DEALER",
+    "Location": "mehroni",
+    "District": "Lalitpur",
+    "Contact no.": "9415946026",
+    "Visit With Incharge/Dist./Self": "INCHARGE",
+    "Brands available at Shop": "Kamdhenu NXT, Raipur ISI TMT",
+    "Remarks ": "Talking about increase the sale and coverage new sub dealer."
+  },
+  {
+    "Dealer Firm/ Site Name /Influencer Name": "geeta traders",
+    "Contact Person": "suresh",
+    "Status of Contact Person": "EXISTING DEALER",
+    "Location": "talbahet",
+    "District": "Lalitpur",
+    "Contact no.": "8887674268",
+    "Visit With Incharge/Dist./Self": "INCHARGE",
+    "Brands available at Shop": "Kamdhenu NXT, Raipur ISI TMT",
+    "Remarks ": "Talking about increase the sale and coverage new sub dealer."
+  },
+  {
+    "Dealer Firm/ Site Name /Influencer Name": "jai  balaji traders ",
+    "Contact Person": "saurabh agarwal",
+    "Status of Contact Person": "EXISTING DEALER",
+    "Location": "baruasagr",
+    "District": "jhansi",
+    "Contact no.": "9415946026",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "Kamdhenu NXT, Raipur ISI TMT",
+    "Remarks ": "Talking about increase the sale and coverage new sub dealer."
+  },
+  {
+    "Dealer Firm/ Site Name /Influencer Name": "jai sidh baba traders",
+    "Contact Person": "pal",
+    "Status of Contact Person": "EXISTING DEALER",
+    "Location": "ninaura",
+    "District": "jhansi",
+    "Contact no.": "6260257486",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "raipur isi tmt",
+    "Remarks ": "take some intrest but regarding to work not clear."
+  },
+  {
+    "Dealer Firm/ Site Name /Influencer Name": "mahakal steel",
+    "Contact Person": "ayush",
+    "Status of Contact Person": "new prospectus",
+    "Location": "jhansi",
+    "District": "jhansi",
+    "Contact no.": "8707703186",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "Kamdhenu NXT, Raipur ISI TMT ",
+    "Remarks ": "kamdhenu benefits , quality"
+  },
+  {
+    "Dealer Firm/ Site Name /Influencer Name": "kamakhya traders ",
+    "Contact Person": "Kamakhya",
+    "Status of Contact Person": "EXISTING DEALER",
+    "Location": "jhansi",
+    "District": "jhansi",
+    "Contact no.": "9450527545",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "Kamdhenu NXT, Raipur ISI TMT",
+    "Remarks ": "littele improvement in sale"
+  },
+  {
+    "Dealer Firm/ Site Name /Influencer Name": "Agrawal enterprises",
+    "Contact Person": "shivam",
+    "Status of Contact Person": "non dealer",
+    "Location": "Jhansi",
+    "District": "jhansi",
+    "Contact no.": "7652076467",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "Raipur ISI TMT, GK TMT",
+    "Remarks ": "due to low margin dealer loose rheir intrest"
+  },
+  {
+    "Dealer Firm/ Site Name /Influencer Name": "site visit",
+    "Contact Person": "kalka ",
+    "Status of Contact Person": "site visit",
+    "Location": "jhansi",
+    "District": "jhansi",
+    "Contact no.": "7607100613",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "Kamdhenu NXT ",
+    "Remarks ": "benifts of kamdhenu nxt"
+  },
+  {
+    "Dealer Firm/ Site Name /Influencer Name": "amit steel corporation",
+    "Contact Person": "amit",
+    "Status of Contact Person": "non dealer",
+    "Location": "jhansi",
+    "District": "jhansi",
+    "Contact no.": "9450078518",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": " Raipur ISI TMT",
+    "Remarks ": "explain about kamdhenu nxt benifit"
+  },
+  {
+    "Dealer Firm/ Site Name /Influencer Name": "kuber enterprises",
+    "Contact Person": "kuber",
+    "Status of Contact Person": "new prospectus",
+    "Location": "jhansi",
+    "District": "jhansi",
+    "Contact no.": "9424536666",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "Tata tmt, Meenakshi tmt, Raipur tmt",
+    "Remarks ": "take some intrest but regarding to work not clear."
+  },
+  {
+    "Dealer Firm/ Site Name /Influencer Name": "vishnadas steel ",
+    "Contact Person": "divanshu",
+    "Status of Contact Person": "EXISTING DEALER",
+    "Location": "rajgarh",
+    "District": "jhansi",
+    "Contact no.": "9695297749",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "Kamdhenu NXT, Raipur ISI TMT",
+    "Remarks ": "Talking about increase the sale and coverage new sub dealer."
+  },
+  {
+    "Dealer Firm/ Site Name /Influencer Name": "rahul steel",
+    "Contact Person": "rahul",
+    "Status of Contact Person": "EXISTING DEALER",
+    "Location": "rajgarh",
+    "District": "jhansi",
+    "Contact no.": "9415230195",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "kamdhenu nxt ",
+    "Remarks ": "Talking about increase the sale and coverage new sub dealer."
+  },
+  {
+    "Dealer Firm/ Site Name /Influencer Name": "Avinash Kumar and brothers ",
+    "Contact Person": "avinash",
+    "Status of Contact Person": "EXISTING DEALER",
+    "Location": "Lalitpur",
+    "District": "Lalitpur ",
+    "Contact no.": "7007866819",
+    "Visit With Incharge/Dist./Self": "SELF",
+    "Brands available at Shop": "Kamdhenu NXT, Raipur ISI TMT",
+    "Remarks ": "taking about organise manson meet"
+  },
+  {
+    "Dealer Firm/ Site Name /Influencer Name": "LEAVE",
+    "Contact Person": "",
+    "Status of Contact Person": "",
+    "Location": "",
+    "District": "",
+    "Contact no.": "",
+    "Visit With Incharge/Dist./Self": "",
+    "Brands available at Shop": "",
+    "Remarks ": ""
+  }
+];
 
 let currentDate = null;
 let selectedDealers = new Set();
@@ -800,6 +865,7 @@ let finalData = [];
 
 // 🟢 Set Date
 function createNewDate() {
+
     let pickedDate = document.getElementById("datePicker").value;
 
     if (!pickedDate) {
@@ -816,43 +882,57 @@ function createNewDate() {
     document.getElementById("results").innerHTML = "";
 }
 
-// 🔍 SEARCH (ONLY DEALER NAME)
+// 🔍 SEARCH
 function searchData() {
+
     let query = document.querySelector(".search").value.toLowerCase();
+
     let resultsDiv = document.getElementById("results");
 
     resultsDiv.innerHTML = "";
 
-    let filtered = dealers
-        .map((d, index) => ({...d, index}))
-        .filter(d => d["DEALER NAME"].toLowerCase().includes(query));
+    let filtered = data
+        .map((d, index) => ({ ...d, index }))
+        .filter(d =>
+            d["Dealer Firm/ Site Name /Influencer Name"]
+            .toLowerCase()
+            .includes(query)
+        );
 
     filtered.forEach(dealer => {
+
         let div = document.createElement("div");
+
         div.className = "search-item";
 
         div.innerHTML = `
             <span>
-                ${dealer["DEALER NAME"]} (${dealer["CONTACT PERSON"]})
+                ${dealer["Dealer Firm/ Site Name /Influencer Name"]}
+                (${dealer["Contact Person"] || "No Contact"})
             </span>
-            <input type="checkbox" onchange="toggleDealer(${dealer.index}, this)">
+
+            <input type="checkbox"
+                   onchange="toggleDealer(${dealer.index}, this)">
         `;
 
         resultsDiv.appendChild(div);
     });
 }
 
-// ✅ Toggle selection using index
+// ✅ Toggle selection
 function toggleDealer(index, checkbox) {
+
     if (checkbox.checked) {
         selectedDealers.add(index);
-    } else {
+    }
+    else {
         selectedDealers.delete(index);
     }
 }
 
 // ➕ Add Data
 function addData() {
+
     if (!currentDate) {
         alert("Click New Date first");
         return;
@@ -863,7 +943,8 @@ function addData() {
         return;
     }
 
-    let selectedObjects = Array.from(selectedDealers).map(i => dealers[i]);
+    let selectedObjects =
+        Array.from(selectedDealers).map(i => data[i]);
 
     finalData.push({
         date: currentDate,
@@ -871,7 +952,9 @@ function addData() {
     });
 
     selectedDealers.clear();
+
     document.querySelector(".search").value = "";
+
     document.getElementById("results").innerHTML = "";
 
     displayData();
@@ -879,25 +962,35 @@ function addData() {
 
 // 👁️ Display
 function displayData() {
+
     let view = document.getElementById("view");
+
     view.innerHTML = "";
 
     finalData.forEach(item => {
+
         let block = document.createElement("div");
+
         block.className = "date-block";
 
         let html = `<b>${item.date}</b><br>`;
 
         item.dealers.forEach(d => {
-            html += `&nbsp;&nbsp;&nbsp;${d["DEALER NAME"]}<br>`;
+
+            html += `
+                &nbsp;&nbsp;&nbsp;
+                ${d["Dealer Firm/ Site Name /Influencer Name"]}
+                <br>
+            `;
         });
 
         block.innerHTML = html;
+
         view.appendChild(block);
     });
 }
 
-// 📥 Excel
+// 📥 Excel Download
 function downloadExcel() {
 
     if (finalData.length === 0) {
@@ -908,40 +1001,65 @@ function downloadExcel() {
     let excelData = [];
 
     finalData.forEach(item => {
+
         item.dealers.forEach((dealer, index) => {
+
             excelData.push({
+
                 Date: index === 0 ? item.date : "",
-                Dealer: dealer["DEALER NAME"],
-                Contact: dealer["CONTACT PERSON"],
-                Town: dealer["TOWN"],
-                Mobile: dealer["MOB NO"]
+
+                Dealer:
+                    dealer["Dealer Firm/ Site Name /Influencer Name"],
+
+                Contact:
+                    dealer["Contact Person"],
+
+                Location:
+                    dealer["Location"],
+
+                District:
+                    dealer["District"],
+
+                Mobile:
+                    dealer["Contact no."],
+
+                Status:
+                    dealer["Status of Contact Person"],
+
+                VisitType:
+                    dealer["Visit With Incharge/Dist./Self"],
+
+                Brands:
+                    dealer["Brands available at Shop"],
+
+                Remarks:
+                    dealer["Remarks "]
             });
         });
     });
 
-    let worksheet = XLSX.utils.json_to_sheet(excelData);
+    let worksheet =
+        XLSX.utils.json_to_sheet(excelData);
 
-    // 🔥 Get range
-    let range = XLSX.utils.decode_range(worksheet['!ref']);
+    let workbook =
+        XLSX.utils.book_new();
 
-    // 🔥 Style header row
-    for (let col = range.s.c; col <= range.e.c; col++) {
-        let cellAddress = XLSX.utils.encode_cell({ r: 0, c: col });
+    XLSX.utils.book_append_sheet(
+        workbook,
+        worksheet,
+        "Dealers"
+    );
 
-        if (!worksheet[cellAddress]) continue;
-
-        worksheet[cellAddress].s = {
-            font: { bold: true },
-            alignment: { horizontal: "center" }
-        };
-    }
-
-    let workbook = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(workbook, worksheet, "Dealers");
-
-    XLSX.writeFile(workbook, "Dealer_Visits.xlsx");
+    XLSX.writeFile(
+        workbook,
+        "Dealer_Visits.xlsx"
+    );
 }
+
 </script>
+
+
+
 
 </body>
 </html>
