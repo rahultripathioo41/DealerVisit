@@ -991,6 +991,7 @@ function displayData() {
 }
 
 // 📥 Excel Download
+// 📥 Excel Download
 function downloadExcel() {
 
     if (finalData.length === 0) {
@@ -1002,47 +1003,42 @@ function downloadExcel() {
 
     finalData.forEach(item => {
 
-        item.dealers.forEach((dealer, index) => {
+        item.dealers.forEach((dealer) => {
 
             excelData.push({
 
-                Date: index === 0 ? item.date : "",
+                "Date": item.date,
 
-                Dealer:
+                "Dealer Firm/ Site Name /Influencer Name":
                     dealer["Dealer Firm/ Site Name /Influencer Name"],
 
-                Contact:
+                "Contact Person":
                     dealer["Contact Person"],
 
-                Location:
-                    dealer["Location"],
-
-                District:
-                    dealer["District"],
-
-                Mobile:
-                    dealer["Contact no."],
-
-                Status:
+                "Status of Contact Person":
                     dealer["Status of Contact Person"],
 
-                VisitType:
+                "Location":
+                    dealer["Location"],
+
+                "District":
+                    dealer["District"],
+
+                "Visit With Incharge/Dist./Self":
                     dealer["Visit With Incharge/Dist./Self"],
 
-                Brands:
+                "Brands available at Shop":
                     dealer["Brands available at Shop"],
 
-                Remarks:
+                "Remarks":
                     dealer["Remarks "]
             });
         });
     });
 
-    let worksheet =
-        XLSX.utils.json_to_sheet(excelData);
+    let worksheet = XLSX.utils.json_to_sheet(excelData);
 
-    let workbook =
-        XLSX.utils.book_new();
+    let workbook = XLSX.utils.book_new();
 
     XLSX.utils.book_append_sheet(
         workbook,
@@ -1055,7 +1051,6 @@ function downloadExcel() {
         "Dealer_Visits.xlsx"
     );
 }
-
 </script>
 
 
